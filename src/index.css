@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light Mode - Clean & Professional with Gamer Accents */
+    /* Base Backgrounds */
+    --color-bg-primary: 210 20% 96%;
+    --color-bg-secondary: 225 30% 93%;
+    --background: var(--color-bg-primary);
+    --background-secondary: var(--color-bg-secondary);
+
+    /* Text Colors - High Contrast */
+    --color-text-primary: 235 50% 15%;
+    --foreground: var(--color-text-primary);
+
+    /* Card System */
+    --color-card: 0 0% 100%;
+    --card: var(--color-card);
+    --card-foreground: 235 50% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 235 50% 15%;
+
+    /* Accent Colors - Gamer Aesthetic */
+    --color-accent: 209 100% 55%;
+    --color-highlight: 253 95% 65%;
+    --color-glow: 180 100% 45%;
+
+    /* Primary - Electric Blue */
+    --primary: var(--color-accent);
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 209 100% 70%;
+
+    /* Secondary - Vibrant Violet */
+    --secondary: var(--color-highlight);
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 253 95% 80%;
+
+    /* Accent - Neon Cyan */
+    --accent: var(--color-glow);
+    --accent-foreground: 235 50% 15%;
+    --accent-glow: 180 100% 60%;
+
+    /* Muted & Borders */
+    --muted: 220 15% 88%;
+    --muted-foreground: 235 25% 45%;
+    --border: 220 20% 85%;
+    --input: 220 20% 92%;
+    --ring: 209 100% 55%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --radius: 0.75rem;
+
+    /* Custom Gradients - Light Mode */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(209 100% 55%),
+      hsl(253 95% 65%)
+    );
+    --gradient-neon: linear-gradient(
+      135deg,
+      hsl(209 100% 55%),
+      hsl(180 100% 45%)
+    );
+    --gradient-bg: linear-gradient(180deg, hsl(210 20% 96%), hsl(225 30% 93%));
+    --gradient-section: linear-gradient(
+      180deg,
+      hsl(225 30% 93% / 0.5),
+      hsl(210 20% 96% / 0.5)
+    );
+
+    /* Hero Background Overlay - Light Mode (reduced intensity) */
+    --hero-overlay-start: 210 20% 96% / 0.85;
+    --hero-overlay-end: 225 30% 93% / 0.92;
+    --hero-particle-opacity: 0.15;
+
+    /* Shadows - Light Mode (subtle) */
+    --shadow-primary: 0 0 20px hsla(209 100% 55% / 0.2);
+    --shadow-secondary: 0 0 20px hsla(253 95% 65% / 0.2);
+    --shadow-accent: 0 0 25px hsla(180 100% 45% / 0.25);
+    --shadow-card: 0 4px 20px hsla(235 50% 15% / 0.08);
+  }
+
+  .dark {
+    /* Dark Mode - Deep & Futuristic with Neon Accents */
+    /* Base Backgrounds */
+    --color-bg-primary: 235 50% 8%;
+    --color-bg-secondary: 235 45% 14%;
+    --background: var(--color-bg-primary);
+    --background-secondary: var(--color-bg-secondary);
+
+    /* Text Colors - High Contrast */
+    --color-text-primary: 0 0% 96%;
+    --foreground: var(--color-text-primary);
+
+    /* Card System */
+    --color-card: 235 50% 12%;
+    --card: var(--color-card);
+    --card-foreground: 0 0% 96%;
+
+    --popover: 235 50% 12%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Accent Colors - Intense Gamer Aesthetic */
+    --color-accent: 180 100% 50%;
+    --color-highlight: 209 85% 60%;
+    --color-glow: 253 100% 70%;
+
+    /* Primary - Electric Blue (brighter in dark) */
+    --primary: var(--color-highlight);
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 209 85% 75%;
+
+    /* Secondary - Vibrant Violet (brighter in dark) */
+    --secondary: var(--color-glow);
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 253 100% 85%;
+
+    /* Accent - Neon Cyan */
+    --accent: var(--color-accent);
+    --accent-foreground: 235 50% 8%;
+    --accent-glow: 180 100% 70%;
+
+    /* Muted & Borders */
+    --muted: 235 35% 22%;
+    --muted-foreground: 0 0% 72%;
+    --border: 235 45% 24%;
+    --input: 235 45% 18%;
+    --ring: 209 85% 60%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Custom Gradients - Dark Mode */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(209 85% 60%),
+      hsl(253 100% 70%)
+    );
+    --gradient-neon: linear-gradient(
+      135deg,
+      hsl(209 85% 60%),
+      hsl(180 100% 50%)
+    );
+    --gradient-bg: linear-gradient(180deg, hsl(235 50% 8%), hsl(235 45% 14%));
+    --gradient-section: linear-gradient(
+      180deg,
+      hsl(235 45% 14% / 0.7),
+      hsl(235 50% 8% / 0.7)
+    );
+
+    /* Hero Background Overlay - Dark Mode (intense) */
+    --hero-overlay-start: 235 50% 8% / 0.75;
+    --hero-overlay-end: 235 45% 14% / 0.88;
+    --hero-particle-opacity: 0.35;
+
+    /* Shadows with Glow - Dark Mode (intense) */
+    --shadow-primary: 0 0 35px hsla(209 85% 60% / 0.55);
+    --shadow-secondary: 0 0 35px hsla(253 100% 70% / 0.55);
+    --shadow-accent: 0 0 45px hsla(180 100% 50% / 0.65);
+    --shadow-card: 0 8px 32px hsla(0 0% 0% / 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    transition:
+      background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--shadow-secondary);
+  }
+
+  .glow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-neon {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: hsla(var(--card) / 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsla(var(--border) / 0.5);
+    transition:
+      background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark .glass-card {
+    background: hsla(var(--card) / 0.75);
+    border: 1px solid hsla(var(--border) / 0.65);
+  }
+
+  /* Section Gradient Transitions */
+  .section-gradient {
+    background: var(--gradient-section);
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hero Specific Styles */
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      hsla(var(--hero-overlay-start)),
+      hsla(var(--hero-overlay-end))
+    );
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hero-particles {
+    opacity: var(--hero-particle-opacity);
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
