@@ -19,6 +19,32 @@ All colors MUST be HSL.
     --color-text-primary: 235 50% 15%;
     --foreground: var(--color-text-primary);
 
+    /* Shadow System */
+    --shadow-primary: 0 0 15px -2px hsl(var(--primary)),
+      0 0 5px -2px hsl(var(--primary));
+    --shadow-secondary: 0 0 15px -2px hsl(var(--secondary)),
+      0 0 5px -2px hsl(var(--secondary));
+    --shadow-accent: 0 0 15px -2px hsl(var(--accent)),
+      0 0 5px -2px hsl(var(--accent));
+
+    /* Gradient System */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--secondary)) 100%
+    );
+    --gradient-neon: linear-gradient(
+      135deg,
+      hsl(var(--primary-glow)) 0%,
+      hsl(var(--secondary-glow)) 50%,
+      hsl(var(--accent-glow)) 100%
+    );
+    --gradient-section: linear-gradient(
+      180deg,
+      hsl(var(--background)) 0%,
+      hsl(var(--background-secondary)) 100%
+    );
+
     /* Card System */
     --color-card: 0 0% 100%;
     --card: var(--color-card);
@@ -177,13 +203,8 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family:
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      sans-serif;
-    transition:
-      background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
       color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
@@ -196,6 +217,32 @@ All colors MUST be HSL.
     font-weight: 700;
     letter-spacing: -0.02em;
   }
+}
+
+/* Dark Mode */
+.dark {
+  /* Dark Backgrounds */
+  --color-bg-primary: 230 25% 10%;
+  --color-bg-secondary: 235 30% 8%;
+  --background: var(--color-bg-primary);
+  --background-secondary: var(--color-bg-secondary);
+
+  /* Dark Text */
+  --color-text-primary: 210 20% 96%;
+  --foreground: var(--color-text-primary);
+
+  /* Dark Cards */
+  --color-card: 235 30% 15%;
+  --card: var(--color-card);
+  --card-foreground: 210 20% 96%;
+
+  /* Enhanced Glow Effects */
+  --shadow-primary: 0 0 20px -2px hsl(var(--primary)),
+    0 0 8px -2px hsl(var(--primary));
+  --shadow-secondary: 0 0 20px -2px hsl(var(--secondary)),
+    0 0 8px -2px hsl(var(--secondary));
+  --shadow-accent: 0 0 20px -2px hsl(var(--accent)),
+    0 0 8px -2px hsl(var(--accent));
 }
 
 @layer utilities {
@@ -229,8 +276,7 @@ All colors MUST be HSL.
     background: hsla(var(--card) / 0.6);
     backdrop-filter: blur(12px);
     border: 1px solid hsla(var(--border) / 0.5);
-    transition:
-      background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
       border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
       box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
