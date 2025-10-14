@@ -41,7 +41,7 @@ export default function Contact() {
     {
       name: 'LinkedIn',
       icon: <Linkedin className="w-6 h-6 text-secondary" />,
-      href: 'https://www.linkedin.com/in/reinaldo-matheus',
+      href: 'https://www.linkedin.com/in/matheus-reinaldo',
     },
   ];
 

@@ -1,73 +1,130 @@
-# React + TypeScript + Vite
+# 🌌 Bem vindo ao Readme do meu novo portfólio 👀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> “Transformando ideias em experiências digitais inovadoras com a liguagem mais adequada para a ocasião, sem esquecer as premissas do Clean Code.”
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Sobre o Projeto
 
-## React Compiler
+Este é o meu **portfólio pessoal**, desenvolvido com **Next.js**, **TypeScript**, **TailwindCSS**, e muito carinho, projetado para refletir minha personalidade como desenvolvedor e entusiasta do mundo **tech, gamer e anime**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O site foi criado para ser **intuitivo, dinâmico e elegante**, priorizando os fundamentos de **Clean Code** e **Design Responsivo**, com modo **Dark/Light** totalmente customizado e transições suaves.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 💻 Tecnologias Utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Categoria                   | Tecnologias                                            |
+| --------------------------- | ------------------------------------------------------ |
+| **Frontend**                | Next.js • React • TypeScript • TailwindCSS • Shadcn/UI |
+| **Design e UI**             | Lucide Icons • Framer Motion • Tailwind Variants       |
+| **Gestão de Tema**          | next-themes (Dark/Light Mode inteligente)              |
+| **Formulários & Validação** | React Hook Form • Zod                                  |
+| **Dados & API**             | React Query • Node.js (para integração futura)         |
+| **Gráficos & Visuals**      | Recharts • Partículas animadas customizadas            |
+| **Outros**                  | ESLint • Prettier • Husky • Vercel (deploy)            |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🎨 Design
+
+O layout foi inspirado em **interfaces futuristas** e **visuals de jogos e animes**, combinando **tons de azul, violeta e ciano neon** para criar uma experiência imersiva e moderna.
+
+**✨ Destaques:**
+
+- Interface com vibe _Tech/Neon... estilo Cyber Punk_
+- Transições suaves entre temas
+- Efeitos de brilho e partículas
+- Paleta cuidadosamente balanceada para contraste e legibilidade (AAA)
+
+---
+
+## 🧠 Estrutura do Projeto
+
+```bash
+📂 meu-portfolio
+├── 📁 src
+│   ├── 📁 components   # Componentes reutilizáveis (as aulas de React não foram atoa kkk)
+│   ├── 📁 pages        # Páginas principais (Home, Sobre, Projetos, etc)
+│   ├── 📁 assets       # Imagens e ícones
+│   ├── 📁 styles       # Estilos globais e customizações Tailwind
+│   └── 📁 hooks        # Hooks personalizados
+├── 📄 tailwind.config.ts
+├── 📄 postcss.config.js
+├── 📄 package.json
+└── 📄 README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🌗 Alternância de Tema
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+O projeto conta com um **sistema inteligente de Dark/Light Mode**, ajustando contraste e saturação automaticamente conforme o fundo da seção.  
+Tudo isso via **ThemeProvider (next-themes)** e **CSS Variables**.
+
+---
+
+## 🧩 Principais Features
+
+✅ Design 100% Responsivo  
+✅ Dark/Light Mode com contraste dinâmico  
+✅ Animações suaves com Framer Motion  
+✅ Código limpo e modular  
+✅ Efeitos de partículas e glow personalizados  
+✅ Seção de projetos dinâmica e filtrável
+
+---
+
+## 🌐 Deploy
+
+O deploy foi realizado na **Vercel**, garantindo:
+
+- Build otimizado via Next.js
+- Preview automático em Pull Requests
+- CI/CD integrado com GitHub
+
+---
+
+## 👨🏾‍🚀 Autor
+
+👋 **Me chamo Matheus Reinaldo**  
+💻 Desenvolvedor Full Stack Jr. | Apaixonado por tecnologia, treino e anime  
+📧 **[Seu Email Aqui]**  
+💼 [LinkedIn]([https://www.linkedin.com/in/matheus-reinaldo/])  
+📸 [Instagram]([https://www.instagram.com/reinaldomatheus__])
+
+---
+
+## 💬 Frase que guia este projeto
+
+> "Se você quer ir rápido, se quer terminar rápido, se quer que seu código seja fácil de escrever, torne-o fácil de ler."
+> — Robert C. Martin 🧠💪
+
+---
+
+## 🧠 Próximos Passos
+
+🔹 Adicionar backend com Node.js + Supabase  
+🔹 Criar dashboard para monitorar visitas e feedbacks  
+🔹 Adicionar página interativa de contato com API personalizada  
+🔹 Traduzir o site para inglês
+
+---
+
+## 🪄 Licença
+
+Este projeto está sob a licença **MIT**.  
+Sinta-se livre para utilizar, modificar e evoluir , desde que mantenha os créditos.
+
+---
+
+## 🌀 Preview
+
+| Tema Claro                                       | Tema Escuro                                    |
+| ------------------------------------------------ | ---------------------------------------------- |
+| ![Light Mode](https://i.imgur.com/lightmode.png) | ![Dark Mode](https://i.imgur.com/darkmode.png) |
+
+---
+
+⭐ **Se você curtiu o design e o código, não esquece de deixar uma estrela no repositório!**  
+Isso me proporciona aquele buster de energia e motivação 🙌🏾🚀
