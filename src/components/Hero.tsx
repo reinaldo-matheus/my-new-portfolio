@@ -10,24 +10,19 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `url(${heroBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
-      }}
+      className="hero-background"
+      style={{ backgroundImage: `url(${heroBg})` }}
     >
       {/* Dynamic theme-aware overlay */}
       <div className="absolute inset-0 hero-overlay" />
 
       {/* Animated particles effect overlay - theme-aware brightness */}
       <div className="absolute inset-0 hero-particles">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-accent rounded-full animate-float glow-accent" />
-        <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-primary rounded-full animate-float glow-primary" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-secondary rounded-full animate-float glow-secondary" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 right-1/4 w-1 h-1 bg-accent rounded-full animate-float glow-accent" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute top-2/3 left-1/2 w-1 h-1 bg-primary rounded-full animate-float glow-primary" style={{ animationDelay: '2s' }} />
+        <div className="hero-particle hero-particle-1 animate-float" />
+        <div className="hero-particle hero-particle-2 animate-float" />
+        <div className="hero-particle hero-particle-3 animate-float" />
+        <div className="hero-particle hero-particle-4 animate-float" />
+        <div className="hero-particle hero-particle-5 animate-float" />
       </div>
 
       <div className="container mx-auto px-6 z-10 text-center animate-slide-in-up">

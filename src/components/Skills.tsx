@@ -56,13 +56,10 @@ const Skills = () => {
                 </div>
                 <div className="h-3 glass-card rounded-full overflow-hidden relative">
                   <div
-                    className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out relative overflow-hidden`}
-                    style={{
-                      width: isVisible ? `${skill.level}%` : '0%',
-                    }}
+                    className={`skill-progress-bar ${skill.color} ${isVisible ? `w-[${skill.level}%]` : 'skill-progress-bar-0'}`}
                   >
                     {/* Animated shine effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+                    <div className="skill-progress-bar-fill" />
                   </div>
                 </div>
               </div>
