@@ -5,7 +5,7 @@ import profilePhoto from '../assets/profile-photo.jpeg';
 const About = () => {
   const stats = [
     { icon: Code2, label: 'Projetos Completos', value: '20+' },
-    { icon: Rocket, label: 'Anos de Experiência', value: '3+' },
+    { icon: Rocket, label: 'Anos de Experiência', value: '1+' },
     { icon: Zap, label: 'Tecnologias', value: '15+' },
   ];
 

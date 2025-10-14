@@ -5,22 +5,47 @@ import { Button } from '@/components/ui/button';
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'Plataforma completa de e-commerce com Next.js, pagamentos Stripe e dashboard admin.',
-      tech: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
+      title: 'Clone TabNews',
+      description: 'Projeto piloto de aprendizagem aplicando conceitos do curso.dev - em desenvolvimento.',
+      tech: ['Next.js', 'React', 'Node.js', 'Docker', 'Jest'],
       gradient: 'from-primary to-accent',
+      github: 'https://github.com/reinaldo-matheus/clone-tabnews',
+      demo: 'https://clone-tabnews-snowy-seven-88.vercel.app/',
     },
     {
-      title: 'AI Content Generator',
-      description: 'Gerador de conteúdo com IA integrado com OpenAI API, sistema de créditos e autenticação.',
-      tech: ['React', 'Node.js', 'OpenAI', 'MongoDB'],
+      title: 'PetDev',
+      description: 'Sistema de gerenciamento para petshops com funcionalidades completas.',
+      tech: ['React', 'TypeScript', 'Node.js'],
       gradient: 'from-secondary to-primary',
+      github: 'https://github.com/reinaldo-matheus/petDev',
     },
     {
-      title: 'Real-time Chat App',
-      description: 'Aplicação de chat em tempo real com WebSockets, rooms privados e compartilhamento de mídia.',
-      tech: ['Socket.io', 'Express', 'React', 'Redis'],
+      title: 'Landing Page GTA',
+      description: 'Landing page temática do GTA com design moderno e responsivo.',
+      tech: ['HTML', 'CSS', 'JavaScript'],
       gradient: 'from-accent to-secondary',
+      github: 'https://github.com/reinaldo-matheus/landingPage-gta',
+    },
+    {
+      title: 'E-commerce WebStore',
+      description: 'Plataforma de e-commerce desenvolvida aplicando os conhecimentos adiquiridos em Typescript, Next.Js, Prisma e outras tecnologias abordadas na instituição Dev Quest.',
+      tech: ['Next.js', 'Typescript', 'Prisma'],
+      gradient: 'from-primary to-secondary',
+      github: 'https://github.com/reinaldo-matheus/ecommerce-dev-em-dobro',
+    },
+    {
+      title: 'Gerenciador de Tarefas',
+      description: 'Aplicação Java web para gestão de tarefas utilizando framework JSF.                                                                                                                                                                                                     ',
+      tech: ['Java', 'JSF', 'Web'],
+      gradient: 'from-secondary to-accent',
+      github: 'https://github.com/reinaldo-matheus/gerenciador-de-tarefas-java',
+    },
+    {
+      title: 'Registration User React',
+      description: 'Sistema de cadastro de usuários desenvolvido em duas etapas, utilizando React no Front-End. Já em seu Back-End, utilizei Node.Js, Prisma e MongoDB.',
+      tech: ['React', 'JavaScript', 'Node.Js', 'MongoDB'],
+      gradient: 'from-accent to-primary',
+      github: 'https://github.com/reinaldo-matheus/registration-user-react',
     },
   ];
 

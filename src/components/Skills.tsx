@@ -6,17 +6,17 @@ const Skills = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const skills = [
-    { name: 'JavaScript', level: 95, color: 'bg-accent' },
-    { name: 'TypeScript', level: 90, color: 'bg-primary' },
-    { name: 'React / Next.js', level: 92, color: 'bg-secondary' },
-    { name: 'Node.js', level: 88, color: 'bg-accent' },
-    { name: 'PostgreSQL', level: 85, color: 'bg-primary' },
-    { name: 'Git / DevOps', level: 87, color: 'bg-secondary' },
+    { name: 'JavaScript', level: 70, color: 'bg-accent' },
+    { name: 'TypeScript', level: 60, color: 'bg-primary' },
+    { name: 'React / Next.js', level: 60, color: 'bg-secondary' },
+    { name: 'Node.js', level: 60, color: 'bg-accent' },
+    { name: 'PostgreSQL', level: 60, color: 'bg-primary' },
+    { name: 'Git / DevOps', level: 60, color: 'bg-secondary' },
   ];
 
   const technologies = [
-    'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Express',
-    'PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'Git', 'Tailwind CSS',
+    'JavaScript', 'TypeScript', 'Java', 'React', 'Next.js', 'Node.js', 'Express',
+    'PostgreSQL', 'MongoDB', 'Prisma', 'Docker', 'Git', 'Tailwind CSS',
     'GraphQL', 'REST API', 'WebSockets', 'Jest',
   ];
 
