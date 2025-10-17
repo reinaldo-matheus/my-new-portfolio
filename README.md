@@ -1,4 +1,4 @@
-# 🌌 Bem vindo ao Readme do meu novo portfólio 👀
+# 🌌 Bem vindo ao  meu novo portfólio 👀
 
 > “Transformando ideias em experiências digitais inovadoras com a liguagem mais adequada para a ocasião, sem esquecer as premissas do Clean Code.”
 
@@ -84,14 +84,6 @@ O deploy foi realizado na **Vercel**, garantindo:
 - CI/CD integrado com GitHub
 
 ---
-
-## 👨🏾‍🚀 Autor
-
-👋 **Me chamo Matheus Reinaldo**  
-💻 Desenvolvedor Full Stack Jr. | Apaixonado por tecnologia, treino e anime  
-📧 **[Seu Email Aqui]**  
-💼 [LinkedIn]([https://www.linkedin.com/in/matheus-reinaldo/])  
-📸 [Instagram]([https://www.instagram.com/reinaldomatheus__])
 
 ## 👨🏾‍🚀Autor
 
