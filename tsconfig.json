@@ -9,11 +9,14 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "noImplicitAny": false,
-    "noUnusedParameters": false,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "allowJs": true,
-    "noUnusedLocals": false,
-    "strictNullChecks": false
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx"
   }
 }

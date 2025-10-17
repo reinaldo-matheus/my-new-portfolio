@@ -85,6 +85,14 @@ O deploy foi realizado na **Vercel**, garantindo:
 
 ---
 
+## 👨🏾‍🚀 Autor
+
+👋 **Me chamo Matheus Reinaldo**  
+💻 Desenvolvedor Full Stack Jr. | Apaixonado por tecnologia, treino e anime  
+📧 **[Seu Email Aqui]**  
+💼 [LinkedIn]([https://www.linkedin.com/in/matheus-reinaldo/])  
+📸 [Instagram]([https://www.instagram.com/reinaldomatheus__])
+
 ## 👨🏾‍🚀Autor
 
 👋 **Me chamo Matheus Reinaldo**  
@@ -108,13 +116,6 @@ O deploy foi realizado na **Vercel**, garantindo:
 🔹 Criar dashboard para monitorar visitas e feedbacks  
 🔹 Adicionar página interativa de contato com API personalizada  
 🔹 Traduzir o site para inglês
-
----
-
-## 🪄 Licença
-
-Este projeto está sob a licença **MIT**.  
-Sinta-se livre para utilizar, modificar e evoluir , desde que mantenha os créditos.
 
 ---
 
