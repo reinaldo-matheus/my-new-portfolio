@@ -93,6 +93,14 @@ O deploy foi realizado na **Vercel**, garantindo:
 💼 [LinkedIn]([https://www.linkedin.com/in/matheus-reinaldo/])  
 📸 [Instagram]([https://www.instagram.com/reinaldomatheus__])
 
+## 👨🏾‍🚀Autor
+
+👋 **Me chamo Matheus Reinaldo**  
+💻 Desenvolvedor Full Stack Jr. | Apaixonado por tecnologia, treino e anime  
+📧 [reinaldomatheus.dev@gmail.com](mailto:reinaldomatheus.dev@gmail.com)  
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheus-reinaldo/)  
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/reinaldomatheus__)
 ---
 
 ## 💬 Frase que guia este projeto
@@ -108,13 +116,6 @@ O deploy foi realizado na **Vercel**, garantindo:
 🔹 Criar dashboard para monitorar visitas e feedbacks  
 🔹 Adicionar página interativa de contato com API personalizada  
 🔹 Traduzir o site para inglês
-
----
-
-## 🪄 Licença
-
-Este projeto está sob a licença **MIT**.  
-Sinta-se livre para utilizar, modificar e evoluir , desde que mantenha os créditos.
 
 ---
 
