@@ -111,13 +111,6 @@ O deploy foi realizado na **Vercel**, garantindo:
 
 ---
 
-## 🌀 Preview
 
-| Tema Claro                                       | Tema Escuro                                    |
-| ------------------------------------------------ | ---------------------------------------------- |
-| ![Light Mode](https://i.imgur.com/lightmode.png) | ![Dark Mode](https://i.imgur.com/darkmode.png) |
-
----
-
-⭐ **Se você curtiu o design e o código, não esquece de deixar uma estrela no repositório!**  
+⭐ **Se você curtiu o design e o código, não esquece de deixar uma estrelinha no repositório! 😉**  
 Isso me proporciona aquele buster de energia e motivação 🙌🏾🚀
