@@ -7,10 +7,12 @@ const Skills = () => {
 
   const skills = [
     { name: 'JavaScript', level: 70, color: 'bg-accent' },
-    { name: 'TypeScript', level: 60, color: 'bg-primary' },
-    { name: 'React / Next.js', level: 60, color: 'bg-secondary' },
-    { name: 'Node.js', level: 60, color: 'bg-accent' },
-    { name: 'PostgreSQL', level: 60, color: 'bg-primary' },
+    { name: 'TypeScript', level: 60, color: 'bg-secondary' },
+    { name: 'C#', level: 50, color: 'bg-primary' },    
+    { name: 'React / Next.js', level: 70, color: 'bg-accent' },
+    { name: '.Net', level: 50, color: 'bg-primary' },
+    { name: 'Node.js', level: 50, color: 'bg-primary' },
+    { name: 'PostgreSQL', level: 60, color: 'bg-secondary' },
     { name: 'Git / DevOps', level: 60, color: 'bg-secondary' },
   ];
 
