@@ -6,7 +6,7 @@ const Projects = () => {
   const projects = [
      {
       title: 'CodeSharp#',
-      description: 'O CodeSharp é um protótipo de plataforma gamificada inspirado em Duolingo e Mimo, criado para ensinar C# e .NET de forma prática, divertida e progressiva..                                                                                                                                                                                                     ',
+      description: 'O CodeSharp é um protótipo de plataforma gamificada inspirado em Duolingo e Mimo, criado para ensinar C# e .NET de forma prática, divertida e progressiva.',
       tech: ['TypeScript', 'React', 'Tailwind CSS'],
       gradient: 'from-secondary to-accent',
       github: 'https://github.com/reinaldo-matheus/codesharp-adventures.git',
@@ -91,17 +91,29 @@ const Projects = () => {
                     size="sm"
                     variant="outline"
                     className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+                    onClick={() =>
+                      project.github
+                        ? window.open(project.github, '_blank', 'noopener,noreferrer')
+                        : undefined
+                    }
+                    aria-label={`Abrir código de ${project.title} no GitHub`}
+                    disabled={!project.github}
                   >
                     <Github className="w-4 h-4 mr-2" />
                     Code
                   </Button>
-                  <Button
-                    size="sm"
-                    className="flex-1 bg-gradient-to-r from-primary to-secondary hover:opacity-90"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Demo
-                  </Button>
+
+                  {project.demo && (
+                    <Button
+                      size="sm"
+                      className="flex-1 bg-gradient-to-r from-primary to-secondary hover:opacity-90"
+                      onClick={() => window.open(project.demo, '_blank', 'noopener,noreferrer')}
+                      aria-label={`Abrir demo de ${project.title} em nova aba`}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Demo
+                    </Button>
+                  )}
                 </div>
               </div>
             </Card>
