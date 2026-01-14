@@ -50,6 +50,15 @@ const About = () => {
                     </div>
                   </div>
 
+                     <div className="flex justify-between items-center p-3 glass-card rounded-lg">
+                    <span className="text-sm text-muted-foreground">C#</span>
+                    <div className="flex gap-1">
+                      {[...Array(2)].map((_, i) => (
+                        <div key={i} className="w-2 h-2 rounded-full bg-primary animate-glow-pulse" />
+                      ))}
+                    </div>
+                  </div>
+
                   <div className="flex justify-between items-center p-3 glass-card rounded-lg">
                     <span className="text-sm text-muted-foreground">React</span>
                     <div className="flex gap-1">
@@ -70,6 +79,15 @@ const About = () => {
 
                   <div className="flex justify-between items-center p-3 glass-card rounded-lg">
                     <span className="text-sm text-muted-foreground">Node.js</span>
+                    <div className="flex gap-1">
+                      {[...Array(2)].map((_, i) => (
+                        <div key={i} className="w-2 h-2 rounded-full bg-primary animate-glow-pulse" />
+                      ))}
+                    </div>
+                  </div>
+
+                     <div className="flex justify-between items-center p-3 glass-card rounded-lg">
+                    <span className="text-sm text-muted-foreground">.Net</span>
                     <div className="flex gap-1">
                       {[...Array(2)].map((_, i) => (
                         <div key={i} className="w-2 h-2 rounded-full bg-primary animate-glow-pulse" />
@@ -98,7 +116,7 @@ const About = () => {
             </p>
 
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Minha missão é transformar ideias complexas em soluções elegantes, priorizando
+              Minha missão é transformar ideias complexas em soluções práticas, priorizando
               qualidade de código, performance e experiência do usuário em cada projeto.
             </p>
 
