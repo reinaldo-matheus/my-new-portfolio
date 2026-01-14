@@ -15,8 +15,8 @@ const Skills = () => {
   ];
 
   const technologies = [
-    'JavaScript', 'TypeScript', 'Java', 'React', 'Next.js', 'Node.js', 'Express',
-    'PostgreSQL', 'MongoDB', 'Prisma', 'Docker', 'Git', 'Tailwind CSS',
+    'JavaScript', 'TypeScript', 'C#', 'Java', 'React', 'Next.js', 'Node.js', 'Express',
+    'PostgreSQL', '.NET', 'MongoDB', 'Prisma', 'Docker', 'Git', 'Tailwind CSS',
     'GraphQL', 'REST API', 'WebSockets', 'Jest',
   ];
 
