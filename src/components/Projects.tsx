@@ -4,6 +4,13 @@ import { Button } from '@/components/ui/button';
 
 const Projects = () => {
   const projects = [
+     {
+      title: 'CodeSharp#',
+      description: 'O CodeSharp é um protótipo de plataforma gamificada inspirado em Duolingo e Mimo, criado para ensinar C# e .NET de forma prática, divertida e progressiva..                                                                                                                                                                                                     ',
+      tech: ['TypeScript', 'React', 'Tailwind CSS'],
+      gradient: 'from-secondary to-accent',
+      github: 'https://github.com/reinaldo-matheus/codesharp-adventures.git',
+    },
     {
       title: 'Clone TabNews',
       description: 'Projeto piloto de aprendizagem aplicando conceitos do curso.dev - em desenvolvimento.',
@@ -32,13 +39,6 @@ const Projects = () => {
       tech: ['Next.js', 'Typescript', 'Prisma'],
       gradient: 'from-primary to-secondary',
       github: 'https://github.com/reinaldo-matheus/ecommerce-dev-em-dobro',
-    },
-    {
-      title: 'CodeSharp#',
-      description: 'O CodeSharp é um protótipo de plataforma gamificada inspirado em Duolingo e Mimo, criado para ensinar C# e .NET de forma prática, divertida e progressiva..                                                                                                                                                                                                     ',
-      tech: ['TypeScript', 'React', 'Tailwind CSS'],
-      gradient: 'from-secondary to-accent',
-      github: 'https://github.com/reinaldo-matheus/codesharp-adventures.git',
     },
     {
       title: 'Registration User React',
