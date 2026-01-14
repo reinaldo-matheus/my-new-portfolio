@@ -34,11 +34,11 @@ const Projects = () => {
       github: 'https://github.com/reinaldo-matheus/ecommerce-dev-em-dobro',
     },
     {
-      title: 'Gerenciador de Tarefas',
-      description: 'Aplicação Java web para gestão de tarefas utilizando framework JSF.                                                                                                                                                                                                     ',
-      tech: ['Java', 'JSF', 'Web'],
+      title: 'CodeSharp#',
+      description: 'O CodeSharp é um protótipo de plataforma gamificada inspirado em Duolingo e Mimo, criado para ensinar C# e .NET de forma prática, divertida e progressiva..                                                                                                                                                                                                     ',
+      tech: ['TypeScript', 'React', 'Tailwind CSS'],
       gradient: 'from-secondary to-accent',
-      github: 'https://github.com/reinaldo-matheus/gerenciador-de-tarefas-java',
+      github: 'https://github.com/reinaldo-matheus/codesharp-adventures.git',
     },
     {
       title: 'Registration User React',
