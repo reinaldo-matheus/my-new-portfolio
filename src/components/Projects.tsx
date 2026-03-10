@@ -1,6 +1,7 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 
 const Projects = () => {
   const projects = [
@@ -8,14 +9,13 @@ const Projects = () => {
       title: 'CodeSharp#',
       description: 'O CodeSharp é um protótipo de plataforma gamificada inspirado em Duolingo e Mimo, criado para ensinar C# e .NET de forma prática, divertida e progressiva.',
       tech: ['TypeScript', 'React', 'Tailwind CSS'],
-      gradient: 'from-secondary to-accent',
       github: 'https://github.com/reinaldo-matheus/codesharp-adventures.git',
+      status: 'Em desenvolvimento'
     },
     {
       title: 'Clone TabNews',
       description: 'Projeto piloto de aprendizagem aplicando conceitos do curso.dev - em desenvolvimento.',
       tech: ['Next.js', 'React', 'Node.js', 'Docker', 'Jest'],
-      gradient: 'from-primary to-accent',
       github: 'https://github.com/reinaldo-matheus/clone-tabnews',
       demo: 'https://clone-tabnews-snowy-seven-88.vercel.app/',
     },
@@ -23,14 +23,12 @@ const Projects = () => {
       title: 'PetDev',
       description: 'Sistema de gerenciamento para petshops com funcionalidades completas.',
       tech: ['React', 'TypeScript', 'Node.js'],
-      gradient: 'from-secondary to-primary',
       github: 'https://github.com/reinaldo-matheus/petDev',
     },
     {
       title: 'Landing Page GTA',
       description: 'Landing page temática do GTA com design moderno e responsivo.',
       tech: ['HTML', 'CSS', 'JavaScript'],
-      gradient: 'from-accent to-secondary',
       github: 'https://github.com/reinaldo-matheus/landingPage-gta',
     },
     {
@@ -44,75 +42,73 @@ const Projects = () => {
       title: 'Registration User React',
       description: 'Sistema de cadastro de usuários desenvolvido em duas etapas, utilizando React no Front-End. Já em seu Back-End, utilizei Node.Js, Prisma e MongoDB.',
       tech: ['React', 'JavaScript', 'Node.Js', 'MongoDB'],
-      gradient: 'from-accent to-primary',
       github: 'https://github.com/reinaldo-matheus/registration-user-react',
     },
   ];
 
   return (
-    <section id="projetos" className="py-20 px-6 bg-background-secondary">
+    <section id="projetos" className="py-24 px-6 bg-muted/20">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gradient font-['Orbitron']">
-          Projetos em Destaque
-        </h2>
+          <div className="text-center mb-16">
+          <p className="text-sm font-medium text-accent uppercase tracking-widest mb-3">Portfólio</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient tracking-tight">
+            Projetos em Destaque
+          </h2>
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="glass-card p-6 group hover:scale-105 transition-all duration-300 cursor-pointer animate-scale-in relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
+               className="glass-card p-6 group hover:-translate-y-1 transition-all duration-300 hover:glow-primary"
             >
-              {/* Animated gradient border effect */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none`} />
-
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold mb-3 text-gradient-neon group-hover:scale-105 transition-transform">
+                 <div className="flex items-start justify-between mb-4">
+                <h3 className="text-lg font-bold text-foreground">
                   {project.title}
                 </h3>
 
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {project.description}
-                </p>
+                {project.status && (
+                  <Badge variant="outline" className="text-xs border-accent/40 text-accent shrink-0 ml-2">
+                    {project.status}
+                  </Badge>
+                )}
+              </div>
+              
+              <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
+                {project.description}
+              </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs font-medium glass-card rounded-full text-accent border border-accent/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex gap-3">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
-                    onClick={() =>
-                      project.github
-                        ? window.open(project.github, '_blank', 'noopener,noreferrer')
-                        : undefined
-                    }
-                    aria-label={`Abrir código de ${project.title} no GitHub`}
-                    disabled={!project.github}
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-2.5 py-1 text-xs font-medium bg-muted/50 rounded-md text-muted-foreground"
                   >
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
+                    {tech}
+                  </span>
+                ))}
+              </div>
 
-                  {project.demo && (
+                <div className="flex gap-3 pt-2 border-t border-border/50">
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  className="flex-1 text-muted-foreground hover:text-foreground"
+                  onClick={() => window.open(project.github, '_blank')}
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  Código
+                </Button>
+                {project.demo && (
                     <Button
                       size="sm"
-                      className="flex-1 bg-gradient-to-r from-primary to-secondary hover:opacity-90"
-                      onClick={() => window.open(project.demo, '_blank', 'noopener,noreferrer')}
-                      aria-label={`Abrir demo de ${project.title} em nova aba`}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
-                    </Button>
+                      variant="ghost"
+                    className="flex-1 text-accent hover:text-accent"
+                    onClick={() => window.open(project.demo, '_blank')}
+                  >
+                     <ExternalLink className="w-4 h-4 mr-2" />
+                    Demo
+                  </Button>
                   )}
                 </div>
               </div>
