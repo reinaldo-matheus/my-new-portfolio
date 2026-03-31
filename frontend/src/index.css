@@ -2,254 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .skill-progress-bar {
-    @apply h-full rounded-full transition-all duration-1000 ease-out relative overflow-hidden;
-  }
-
-  .skill-progress-bar-0 {
-    width: 0%;
-  }
-
-  .skill-progress-bar-fill {
-    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer;
-  }
-
-  .animate-delay-500 {
-    animation-delay: 500ms;
-  }
-  .animate-delay-1000 {
-    animation-delay: 1000ms;
-  }
-  .animate-delay-1500 {
-    animation-delay: 1500ms;
-  }
-  .animate-delay-2000 {
-    animation-delay: 2000ms;
-  }
-}
-
-@layer components {
-  .hero-background {
-    @apply relative min-h-screen flex items-center justify-center overflow-hidden bg-cover bg-center bg-fixed;
-  }
-
-  .hero-particle {
-    @apply absolute rounded-full;
-  }
-
-  .hero-particle-1 {
-    @apply top-1/4 left-1/4 w-2 h-2 bg-accent glow-accent;
-  }
-
-  .hero-particle-2 {
-    @apply top-1/3 right-1/3 w-1 h-1 bg-primary glow-primary animate-delay-500;
-  }
-
-  .hero-particle-3 {
-    @apply bottom-1/4 left-1/3 w-1.5 h-1.5 bg-secondary glow-secondary animate-delay-1000;
-  }
-
-  .hero-particle-4 {
-    @apply top-1/2 right-1/4 w-1 h-1 bg-accent glow-accent animate-delay-1500;
-  }
-
-  .hero-particle-5 {
-    @apply top-2/3 left-1/2 w-1 h-1 bg-primary glow-primary animate-delay-2000;
-  }
-}
-
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    /* Light Mode - Clean & Professional with Gamer Accents */
+    /* Light Mode - Clean Minimalist with Subtle Personality */
+    
     /* Base Backgrounds */
-    --color-bg-primary: 210 20% 96%;
-    --color-bg-secondary: 225 30% 93%;
-    --background: var(--color-bg-primary);
-    --background-secondary: var(--color-bg-secondary);
-
-    /* Text Colors - High Contrast */
-    --color-text-primary: 235 50% 15%;
-    --foreground: var(--color-text-primary);
-
-    /* Shadow System */
-    --shadow-primary: 0 0 15px -2px hsl(var(--primary)),
-      0 0 5px -2px hsl(var(--primary));
-    --shadow-secondary: 0 0 15px -2px hsl(var(--secondary)),
-      0 0 5px -2px hsl(var(--secondary));
-    --shadow-accent: 0 0 15px -2px hsl(var(--accent)),
-      0 0 5px -2px hsl(var(--accent));
-
-    /* Gradient System */
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(var(--primary)) 0%,
-      hsl(var(--secondary)) 100%
-    );
-    --gradient-neon: linear-gradient(
-      135deg,
-      hsl(var(--primary-glow)) 0%,
-      hsl(var(--secondary-glow)) 50%,
-      hsl(var(--accent-glow)) 100%
-    );
-    --gradient-section: linear-gradient(
-      180deg,
-      hsl(var(--background)) 0%,
-      hsl(var(--background-secondary)) 100%
-    );
-
+    --background: 40 20% 97%;          /* Warm off-white #FAF9F6 */
+    --background-secondary: 95 35% 90%; /* Soft mint green #E8F5E8 */
+    --background-accent: 100 30% 85%;   /* Muted mint #D4E8D1 */
+    
+    /* Text Colors */
+    --foreground: 0 0% 18%;             /* Dark charcoal #2D2D2D */
+    --foreground-muted: 0 0% 45%;       /* Medium gray */
+    
     /* Card System */
-    --color-card: 0 0% 100%;
-    --card: var(--color-card);
-    --card-foreground: 235 50% 15%;
-
+    --card: 0 0% 100%;                  /* Pure white */
+    --card-foreground: 0 0% 18%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 235 50% 15%;
-
-    /* Accent Colors - Gamer Aesthetic */
-    --color-accent: 209 100% 55%;
-    --color-highlight: 253 95% 65%;
-    --color-glow: 180 100% 45%;
-
-    /* Primary - Electric Blue */
-    --primary: var(--color-accent);
+    --popover-foreground: 0 0% 18%;
+    
+    /* Primary - Soft Green Accent */
+    --primary: 120 25% 45%;             /* Muted green */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 209 100% 70%;
-
-    /* Secondary - Vibrant Violet */
-    --secondary: var(--color-highlight);
+    
+    /* Secondary - Subtle Purple (geek touch) */
+    --secondary: 270 25% 65%;           /* Soft lavender #9B8BBD */
     --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 253 95% 80%;
-
-    /* Accent - Neon Cyan */
-    --accent: var(--color-glow);
-    --accent-foreground: 235 50% 15%;
-    --accent-glow: 180 100% 60%;
-
+    
+    /* Accent - Mint Green */
+    --accent: 120 35% 75%;              /* Mint #B8E0B8 */
+    --accent-foreground: 0 0% 18%;
+    
     /* Muted & Borders */
-    --muted: 220 15% 88%;
-    --muted-foreground: 235 25% 45%;
-    --border: 220 20% 85%;
-    --input: 220 20% 92%;
-    --ring: 209 100% 55%;
-
+    --muted: 40 10% 92%;
+    --muted-foreground: 0 0% 45%;
+    --border: 40 10% 88%;
+    --input: 40 10% 95%;
+    --ring: 120 25% 45%;
+    
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-
-    --radius: 0.75rem;
-
-    /* Custom Gradients - Light Mode */
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(209 100% 55%),
-      hsl(253 95% 65%)
-    );
-    --gradient-neon: linear-gradient(
-      135deg,
-      hsl(209 100% 55%),
-      hsl(180 100% 45%)
-    );
-    --gradient-bg: linear-gradient(180deg, hsl(210 20% 96%), hsl(225 30% 93%));
-    --gradient-section: linear-gradient(
-      180deg,
-      hsl(225 30% 93% / 0.5),
-      hsl(210 20% 96% / 0.5)
-    );
-
-    /* Hero Background Overlay - Light Mode (reduced intensity) */
-    --hero-overlay-start: 210 20% 96% / 0.85;
-    --hero-overlay-end: 225 30% 93% / 0.92;
-    --hero-particle-opacity: 0.15;
-
-    /* Shadows - Light Mode (subtle) */
-    --shadow-primary: 0 0 20px hsla(209 100% 55% / 0.2);
-    --shadow-secondary: 0 0 20px hsla(253 95% 65% / 0.2);
-    --shadow-accent: 0 0 25px hsla(180 100% 45% / 0.25);
-    --shadow-card: 0 4px 20px hsla(235 50% 15% / 0.08);
+    
+    --radius: 1rem;
+    
+    /* Shadows - Light Mode */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+    --shadow-card: 0 2px 8px rgba(0,0,0,0.04);
+    
+    /* Transition */
+    --transition-base: 0.2s ease;
   }
 
   .dark {
-    /* Dark Mode - Deep & Futuristic with Neon Accents */
+    /* Dark Mode - Elegant Dark with Mint Accents */
+    
     /* Base Backgrounds */
-    --color-bg-primary: 235 50% 8%;
-    --color-bg-secondary: 235 45% 14%;
-    --background: var(--color-bg-primary);
-    --background-secondary: var(--color-bg-secondary);
-
-    /* Text Colors - High Contrast */
-    --color-text-primary: 0 0% 96%;
-    --foreground: var(--color-text-primary);
-
+    --background: 220 20% 10%;          /* Deep blue-gray */
+    --background-secondary: 220 18% 14%; /* Slightly lighter */
+    --background-accent: 220 15% 18%;
+    
+    /* Text Colors */
+    --foreground: 40 20% 95%;           /* Warm white */
+    --foreground-muted: 40 10% 65%;
+    
     /* Card System */
-    --color-card: 235 50% 12%;
-    --card: var(--color-card);
-    --card-foreground: 0 0% 96%;
-
-    --popover: 235 50% 12%;
-    --popover-foreground: 0 0% 96%;
-
-    /* Accent Colors - Intense Gamer Aesthetic */
-    --color-accent: 180 100% 50%;
-    --color-highlight: 209 85% 60%;
-    --color-glow: 253 100% 70%;
-
-    /* Primary - Electric Blue (brighter in dark) */
-    --primary: var(--color-highlight);
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 209 85% 75%;
-
-    /* Secondary - Vibrant Violet (brighter in dark) */
-    --secondary: var(--color-glow);
-    --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 253 100% 85%;
-
-    /* Accent - Neon Cyan */
-    --accent: var(--color-accent);
-    --accent-foreground: 235 50% 8%;
-    --accent-glow: 180 100% 70%;
-
+    --card: 220 18% 13%;
+    --card-foreground: 40 20% 95%;
+    
+    --popover: 220 18% 13%;
+    --popover-foreground: 40 20% 95%;
+    
+    /* Primary - Brighter Green for Dark Mode */
+    --primary: 120 40% 55%;
+    --primary-foreground: 0 0% 10%;
+    
+    /* Secondary - Brighter Purple */
+    --secondary: 270 35% 70%;
+    --secondary-foreground: 0 0% 10%;
+    
+    /* Accent - Brighter Mint */
+    --accent: 120 45% 65%;
+    --accent-foreground: 0 0% 10%;
+    
     /* Muted & Borders */
-    --muted: 235 35% 22%;
-    --muted-foreground: 0 0% 72%;
-    --border: 235 45% 24%;
-    --input: 235 45% 18%;
-    --ring: 209 85% 60%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    /* Custom Gradients - Dark Mode */
-    --gradient-primary: linear-gradient(
-      135deg,
-      hsl(209 85% 60%),
-      hsl(253 100% 70%)
-    );
-    --gradient-neon: linear-gradient(
-      135deg,
-      hsl(209 85% 60%),
-      hsl(180 100% 50%)
-    );
-    --gradient-bg: linear-gradient(180deg, hsl(235 50% 8%), hsl(235 45% 14%));
-    --gradient-section: linear-gradient(
-      180deg,
-      hsl(235 45% 14% / 0.7),
-      hsl(235 50% 8% / 0.7)
-    );
-
-    /* Hero Background Overlay - Dark Mode (intense) */
-    --hero-overlay-start: 235 50% 8% / 0.75;
-    --hero-overlay-end: 235 45% 14% / 0.88;
-    --hero-particle-opacity: 0.35;
-
-    /* Shadows with Glow - Dark Mode (intense) */
-    --shadow-primary: 0 0 35px hsla(209 85% 60% / 0.55);
-    --shadow-secondary: 0 0 35px hsla(253 100% 70% / 0.55);
-    --shadow-accent: 0 0 45px hsla(180 100% 50% / 0.65);
-    --shadow-card: 0 8px 32px hsla(0 0% 0% / 0.6);
+    --muted: 220 15% 20%;
+    --muted-foreground: 40 10% 60%;
+    --border: 220 15% 22%;
+    --input: 220 15% 18%;
+    --ring: 120 40% 55%;
+    
+    /* Shadows - Dark Mode */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.4);
+    --shadow-card: 0 2px 8px rgba(0,0,0,0.2);
   }
 }
 
@@ -258,109 +110,195 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  html {
+    scroll-behavior: smooth;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
+    line-height: 1.2;
   }
 }
 
-/* Dark Mode */
-.dark {
-  /* Dark Backgrounds */
-  --color-bg-primary: 230 25% 10%;
-  --color-bg-secondary: 235 30% 8%;
-  --background: var(--color-bg-primary);
-  --background-secondary: var(--color-bg-secondary);
+@layer components {
+  /* Modern Card Style */
+  .card-modern {
+    @apply bg-card rounded-2xl border border-border/60;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
 
-  /* Dark Text */
-  --color-text-primary: 210 20% 96%;
-  --foreground: var(--color-text-primary);
+  /* Section Backgrounds */
+  .section-light {
+    @apply bg-background;
+  }
+  
+  .section-accent {
+    @apply bg-background-secondary;
+  }
 
-  /* Dark Cards */
-  --color-card: 235 30% 15%;
-  --card: var(--color-card);
-  --card-foreground: 210 20% 96%;
+  /* Accent Line (like in reference) */
+  .accent-line {
+    @apply w-12 h-1 rounded-full mb-4;
+    background: hsl(var(--accent));
+  }
+  
+  .accent-line-primary {
+    @apply w-12 h-1 rounded-full mb-4;
+    background: hsl(var(--primary));
+  }
 
-  /* Enhanced Glow Effects */
-  --shadow-primary: 0 0 20px -2px hsl(var(--primary)),
-    0 0 8px -2px hsl(var(--primary));
-  --shadow-secondary: 0 0 20px -2px hsl(var(--secondary)),
-    0 0 8px -2px hsl(var(--secondary));
-  --shadow-accent: 0 0 20px -2px hsl(var(--accent)),
-    0 0 8px -2px hsl(var(--accent));
+  /* Modern Button */
+  .btn-modern {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-200;
+    @apply bg-foreground text-background;
+  }
+  
+  .btn-modern:hover {
+    @apply opacity-90 scale-[1.02];
+  }
+
+  /* Skill Tag */
+  .skill-tag {
+    @apply px-3 py-1.5 text-sm font-medium rounded-lg;
+    @apply bg-muted/50 text-muted-foreground;
+    transition: all 0.2s ease;
+  }
+  
+  .skill-tag:hover {
+    @apply bg-accent/30 text-foreground;
+  }
+
+  /* Terminal Easter Egg */
+  .terminal {
+    @apply font-mono text-sm rounded-lg p-4;
+    background: #1a1a2e;
+    color: #a0e7a0;
+  }
+  
+  .terminal-prompt {
+    color: #7dd87d;
+  }
+  
+  .terminal-cursor {
+    @apply inline-block w-2 h-4 ml-1;
+    background: #7dd87d;
+    animation: blink 1s step-end infinite;
+  }
+
+  /* Profile Photo Style (Oval like reference) */
+  .profile-photo-container {
+    @apply relative;
+  }
+  
+  .profile-photo {
+    @apply object-cover;
+    border-radius: 40% 40% 40% 40%;
+  }
 }
 
 @layer utilities {
-  .glow-primary {
-    box-shadow: var(--shadow-primary);
-  }
-
-  .glow-secondary {
-    box-shadow: var(--shadow-secondary);
-  }
-
-  .glow-accent {
-    box-shadow: var(--shadow-accent);
-  }
-
+  /* Text Gradient */
   .text-gradient {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
   }
 
-  .text-gradient-neon {
-    background: var(--gradient-neon);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  /* Fade In Animation */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in-delay-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .animate-fade-in-delay-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-fade-in-delay-3 {
+    animation-delay: 0.3s;
   }
 
-  .glass-card {
-    background: hsla(var(--card) / 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid hsla(var(--border) / 0.5);
-    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Stagger children animation */
+  .stagger-children > * {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
   }
+  
+  .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.15s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.25s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.35s; }
+}
 
-  .dark .glass-card {
-    background: hsla(var(--card) / 0.75);
-    border: 1px solid hsla(var(--border) / 0.65);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  /* Section Gradient Transitions */
-  .section-gradient {
-    background: var(--gradient-section);
-    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  /* Hero Specific Styles */
-  .hero-overlay {
-    background: linear-gradient(
-      to bottom,
-      hsla(var(--hero-overlay-start)),
-      hsla(var(--hero-overlay-end))
-    );
-    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
 
-  .hero-particles {
-    opacity: var(--hero-particle-opacity);
-    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: hsl(var(--background-secondary));
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
 }

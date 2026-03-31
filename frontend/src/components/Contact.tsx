@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
-import { Github, Linkedin, Mail } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { Github, Linkedin, Mail, Send } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function Contact() {
   const { toast } = useToast();
@@ -12,14 +12,17 @@ export default function Contact() {
     setIsLoading(true);
 
     try {
+      // Simulate sending
+      await new Promise(resolve => setTimeout(resolve, 1000));
       toast({
-        title: "Sucesso!",
-        description: "Sua mensagem foi enviada com sucesso.",
+        title: "Mensagem enviada!",
+        description: "Obrigado pelo contato. Responderei em breve.",
       });
+      (e.target as HTMLFormElement).reset();
     } catch (error) {
       toast({
-        title: "Erro!",
-        description: "Ocorreu um erro ao enviar sua mensagem.",
+        title: "Erro",
+        description: "Não foi possível enviar a mensagem.",
         variant: "destructive",
       });
     } finally {
@@ -30,115 +33,142 @@ export default function Contact() {
   const socialLinks = [
     {
       name: 'Email',
-      icon: <Mail className="w-6 h-6 text-accent" />,
+      value: 'reinaldomatheus.dev@gmail.com',
+      icon: <Mail className="w-5 h-5" />,
       href: 'mailto:reinaldomatheus.dev@gmail.com',
     },
     {
       name: 'GitHub',
-      icon: <Github className="w-6 h-6 text-primary" />,
+      value: 'reinaldo-matheus',
+      icon: <Github className="w-5 h-5" />,
       href: 'https://github.com/reinaldo-matheus',
     },
     {
       name: 'LinkedIn',
-      icon: <Linkedin className="w-6 h-6 text-secondary" />,
+      value: 'matheus-reinaldo',
+      icon: <Linkedin className="w-5 h-5" />,
       href: 'https://www.linkedin.com/in/matheus-reinaldo',
     },
   ];
 
   return (
-    <section className="min-h-screen bg-background py-24 px-4" id="contact">
-      <h1 className="text-5xl font-bold text-center mb-16 text-gradient-neon font-orbitron">
-        Entre em Contato
-      </h1>
-
-      <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-        {/* Formulário */}
-        <div className="space-y-6 glass-card p-8 rounded-lg border border-border/50 shadow-lg glow-primary">
-          <div>
-            <label htmlFor="name" className="block text-foreground mb-2">
-              Nome
-            </label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Seu nome"
-              className="w-full bg-card/50 border border-border/50 rounded-md p-3 text-foreground 
-                       focus:outline-none focus:ring-2 focus:ring-primary/50 placeholder:text-muted-foreground"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-foreground mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              placeholder="seu@email.com"
-              className="w-full bg-card/50 border border-border/50 rounded-md p-3 text-foreground 
-                       focus:outline-none focus:ring-2 focus:ring-primary/50 placeholder:text-muted-foreground"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-foreground mb-2">
-              Mensagem
-            </label>
-            <textarea
-              id="message"
-              placeholder="Sua mensagem..."
-              rows={6}
-              className="w-full bg-card/50 border border-border/50 rounded-md p-3 text-foreground 
-                       focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none placeholder:text-muted-foreground"
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full bg-primary text-primary-foreground py-3 px-6 rounded-md font-semibold 
-                     hover:opacity-90 transition-all duration-200 glow-primary disabled:opacity-50"
-          >
-            {isLoading ? (
-              "Enviando..."
-            ) : (
-              <span className="flex items-center justify-center gap-2">
-                Enviar Mensagem
-              </span>
-            )}
-          </button>
+    <section id="contato" className="py-24 px-6 bg-background">
+      <div className="container mx-auto max-w-5xl">
+        {/* Section Header */}
+        <div className="mb-16">
+          <div className="accent-line-primary" />
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
+            Entre em Contato
+          </h2>
         </div>
 
-        {/* Info Cards */}
-        <div className="space-y-8">
-          {/* Redes Sociais */}
-          <Card className="glass-card p-8 glow-secondary">
-            <h2 className="text-2xl font-bold text-gradient-neon mb-6">Redes Sociais</h2>
-            <div className="grid gap-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-lg bg-card/50 border border-border/30 
-                           hover:border-secondary/50 transition-all duration-200 hover:glow-secondary"
-                >
-                  {link.icon}
-                  <span className="text-foreground">{link.name}</span>
-                </a>
-              ))}
+        <div className="grid lg:grid-cols-2 gap-12">
+          {/* Contact Form */}
+          <form onSubmit={handleSubmit} className="card-modern p-8 space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                Nome
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Seu nome"
+                className="w-full bg-muted/30 border border-border rounded-xl p-3 text-foreground 
+                         focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
+                         placeholder:text-muted-foreground transition-all"
+                required
+              />
             </div>
-          </Card>
+            
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="seu@email.com"
+                className="w-full bg-muted/30 border border-border rounded-xl p-3 text-foreground 
+                         focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
+                         placeholder:text-muted-foreground transition-all"
+                required
+              />
+            </div>
+            
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                Mensagem
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Sua mensagem..."
+                rows={5}
+                className="w-full bg-muted/30 border border-border rounded-xl p-3 text-foreground 
+                         focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
+                         resize-none placeholder:text-muted-foreground transition-all"
+                required
+              />
+            </div>
+            
+            <Button
+              type="submit"
+              disabled={isLoading}
+              className="w-full btn-modern"
+            >
+              {isLoading ? (
+                "Enviando..."
+              ) : (
+                <>
+                  Enviar Mensagem
+                  <Send className="ml-2 h-4 w-4" />
+                </>
+              )}
+            </Button>
+          </form>
 
-          {/* Disponibilidade */}
-          <Card className="glass-card p-8 glow-accent">
-            <h2 className="text-2xl font-bold text-gradient mb-4">Disponibilidade</h2>
-            <p className="text-foreground leading-relaxed">
-              Atualmente disponível para projetos freelance e oportunidades full-time.
-              Sempre aberto para discutir ideias inovadoras e desafios técnicos interessantes.
-            </p>
-          </Card>
+          {/* Contact Info */}
+          <div className="space-y-6">
+            {/* Social Links */}
+            <div className="card-modern p-8">
+              <h3 className="text-xl font-semibold text-foreground mb-6">Redes Sociais</h3>
+              <div className="space-y-4">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-xl bg-muted/30 border border-border/50 
+                             hover:border-primary/30 hover:bg-muted/50 transition-all group"
+                  >
+                    <div className="text-primary group-hover:scale-110 transition-transform">
+                      {link.icon}
+                    </div>
+                    <div>
+                      <span className="text-sm text-muted-foreground block">{link.name}</span>
+                      <span className="text-foreground font-medium">{link.value}</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Availability */}
+            <div className="card-modern p-8">
+              <h3 className="text-xl font-semibold text-foreground mb-4">Disponibilidade</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Atualmente disponível para projetos freelance e oportunidades full-time.
+                Sempre aberto para discutir ideias inovadoras e desafios técnicos interessantes.
+              </p>
+              <div className="mt-4 flex items-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-sm text-green-600 dark:text-green-400 font-medium">Disponível para novos projetos</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

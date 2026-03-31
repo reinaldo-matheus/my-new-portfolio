@@ -1,69 +1,69 @@
-import { ArrowDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroBg from '../assets/hero-bg.jpg';
+import profilePhoto from '../assets/profile-photo.jpeg';
 
 const Hero = () => {
-  const scrollToProjects = () => {
-    document.getElementById('projetos')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section
       id="home"
-      className="hero-background"
-      style={{ backgroundImage: `url(${heroBg})` }}
+      className="min-h-screen flex items-center bg-background pt-20"
     >
-      {/* Dynamic theme-aware overlay */}
-      <div className="absolute inset-0 hero-overlay" />
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Text Content */}
+          <div className="order-2 lg:order-1 animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 tracking-tight">
+              Matheus
+            </h1>
 
-      {/* Animated particles effect overlay - theme-aware brightness */}
-      <div className="absolute inset-0 hero-particles">
-        <div className="hero-particle hero-particle-1 animate-float" />
-        <div className="hero-particle hero-particle-2 animate-float" />
-        <div className="hero-particle hero-particle-3 animate-float" />
-        <div className="hero-particle hero-particle-4 animate-float" />
-        <div className="hero-particle hero-particle-5 animate-float" />
-      </div>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
+              Desenvolvedor Full Stack apaixonado por criar experiências digitais 
+              inovadoras e performáticas, transformando ideias em soluções práticas 
+              com foco em código limpo e qualidade.
+            </p>
 
-      <div className="container mx-auto px-6 z-10 text-center animate-slide-in-up">
-        <div className="inline-block mb-4 px-4 py-2 glass-card rounded-full text-sm font-medium text-accent glow-accent">
-          Desenvolvedor Full Stack
-        </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                onClick={() => scrollToSection('sobre')}
+                className="btn-modern group"
+              >
+                Sobre mim
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 font-['Orbitron']">
-          Olá, me chamo{' '}
-          <span className="text-gradient-neon animate-glow-pulse">Matheus</span>
-        </h1>
+              <Button
+                variant="outline"
+                onClick={() => scrollToSection('projetos')}
+                className="px-6 py-3 rounded-full font-medium border-border hover:bg-muted/50 transition-all"
+              >
+                Ver Projetos
+              </Button>
+            </div>
+          </div>
 
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Transformando ideias em experiências digitais inovadoras com a linguagem mais adequada, sem esquecer dos princípios do clean code
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button
-            onClick={scrollToProjects}
-            size="lg"
-            className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 glow-primary font-semibold px-8 py-6 text-lg group"
-          >
-            Ver Meus Projetos
-            <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
-          </Button>
-
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
-            className="border-accent text-accent hover:bg-accent hover:text-background font-semibold px-8 py-6 text-lg transition-all"
-          >
-            Curtiu? Entre em Contato 😉
-          </Button>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-accent rounded-full flex items-start justify-center p-2">
-          <div className="w-1 h-2 bg-accent rounded-full animate-glow-pulse" />
+          {/* Profile Photo */}
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in">
+            <div className="profile-photo-container">
+              <div className="relative">
+                {/* Decorative background */}
+                <div 
+                  className="absolute -inset-4 rounded-[35%] bg-gradient-to-br from-accent/30 to-secondary/20 blur-2xl"
+                  aria-hidden="true"
+                />
+                
+                {/* Photo */}
+                <img
+                  src={profilePhoto}
+                  alt="Matheus - Full Stack Developer"
+                  className="profile-photo relative w-64 h-80 md:w-72 md:h-96 lg:w-80 lg:h-[420px] object-cover border-4 border-background shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
