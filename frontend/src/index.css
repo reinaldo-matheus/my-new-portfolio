@@ -1,0 +1,304 @@
+/* Google Fonts - Must be first */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode - Clean Minimalist with Subtle Personality */
+    
+    /* Base Backgrounds */
+    --background: 40 20% 97%;          /* Warm off-white #FAF9F6 */
+    --background-secondary: 95 35% 90%; /* Soft mint green #E8F5E8 */
+    --background-accent: 100 30% 85%;   /* Muted mint #D4E8D1 */
+    
+    /* Text Colors */
+    --foreground: 0 0% 18%;             /* Dark charcoal #2D2D2D */
+    --foreground-muted: 0 0% 45%;       /* Medium gray */
+    
+    /* Card System */
+    --card: 0 0% 100%;                  /* Pure white */
+    --card-foreground: 0 0% 18%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+    
+    /* Primary - Soft Green Accent */
+    --primary: 120 25% 45%;             /* Muted green */
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Subtle Purple (geek touch) */
+    --secondary: 270 25% 65%;           /* Soft lavender #9B8BBD */
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent - Mint Green */
+    --accent: 120 35% 75%;              /* Mint #B8E0B8 */
+    --accent-foreground: 0 0% 18%;
+    
+    /* Muted & Borders */
+    --muted: 40 10% 92%;
+    --muted-foreground: 0 0% 45%;
+    --border: 40 10% 88%;
+    --input: 40 10% 95%;
+    --ring: 120 25% 45%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --radius: 1rem;
+    
+    /* Shadows - Light Mode */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
+    --shadow-card: 0 2px 8px rgba(0,0,0,0.04);
+    
+    /* Transition */
+    --transition-base: 0.2s ease;
+  }
+
+  .dark {
+    /* Dark Mode - Elegant Dark with Mint Accents */
+    
+    /* Base Backgrounds */
+    --background: 220 20% 10%;          /* Deep blue-gray */
+    --background-secondary: 220 18% 14%; /* Slightly lighter */
+    --background-accent: 220 15% 18%;
+    
+    /* Text Colors */
+    --foreground: 40 20% 95%;           /* Warm white */
+    --foreground-muted: 40 10% 65%;
+    
+    /* Card System */
+    --card: 220 18% 13%;
+    --card-foreground: 40 20% 95%;
+    
+    --popover: 220 18% 13%;
+    --popover-foreground: 40 20% 95%;
+    
+    /* Primary - Brighter Green for Dark Mode */
+    --primary: 120 40% 55%;
+    --primary-foreground: 0 0% 10%;
+    
+    /* Secondary - Brighter Purple */
+    --secondary: 270 35% 70%;
+    --secondary-foreground: 0 0% 10%;
+    
+    /* Accent - Brighter Mint */
+    --accent: 120 45% 65%;
+    --accent-foreground: 0 0% 10%;
+    
+    /* Muted & Borders */
+    --muted: 220 15% 20%;
+    --muted-foreground: 40 10% 60%;
+    --border: 220 15% 22%;
+    --input: 220 15% 18%;
+    --ring: 120 40% 55%;
+    
+    /* Shadows - Dark Mode */
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+    --shadow-lg: 0 8px 24px rgba(0,0,0,0.4);
+    --shadow-card: 0 2px 8px rgba(0,0,0,0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  /* Modern Card Style */
+  .card-modern {
+    @apply bg-card rounded-2xl border border-border/60;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Section Backgrounds */
+  .section-light {
+    @apply bg-background;
+  }
+  
+  .section-accent {
+    @apply bg-background-secondary;
+  }
+
+  /* Accent Line (like in reference) */
+  .accent-line {
+    @apply w-12 h-1 rounded-full mb-4;
+    background: hsl(var(--accent));
+  }
+  
+  .accent-line-primary {
+    @apply w-12 h-1 rounded-full mb-4;
+    background: hsl(var(--primary));
+  }
+
+  /* Modern Button */
+  .btn-modern {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-200;
+    @apply bg-foreground text-background;
+  }
+  
+  .btn-modern:hover {
+    @apply opacity-90 scale-[1.02];
+  }
+
+  /* Skill Tag */
+  .skill-tag {
+    @apply px-3 py-1.5 text-sm font-medium rounded-lg;
+    @apply bg-muted/50 text-muted-foreground;
+    transition: all 0.2s ease;
+  }
+  
+  .skill-tag:hover {
+    @apply bg-accent/30 text-foreground;
+  }
+
+  /* Terminal Easter Egg */
+  .terminal {
+    @apply font-mono text-sm rounded-lg p-4;
+    background: #1a1a2e;
+    color: #a0e7a0;
+  }
+  
+  .terminal-prompt {
+    color: #7dd87d;
+  }
+  
+  .terminal-cursor {
+    @apply inline-block w-2 h-4 ml-1;
+    background: #7dd87d;
+    animation: blink 1s step-end infinite;
+  }
+
+  /* Profile Photo Style (Oval like reference) */
+  .profile-photo-container {
+    @apply relative;
+  }
+  
+  .profile-photo {
+    @apply object-cover;
+    border-radius: 40% 40% 40% 40%;
+  }
+}
+
+@layer utilities {
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+
+  /* Fade In Animation */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .animate-fade-in-delay-1 {
+    animation-delay: 0.1s;
+  }
+  
+  .animate-fade-in-delay-2 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-fade-in-delay-3 {
+    animation-delay: 0.3s;
+  }
+
+  /* Stagger children animation */
+  .stagger-children > * {
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-children > *:nth-child(2) { animation-delay: 0.15s; }
+  .stagger-children > *:nth-child(3) { animation-delay: 0.2s; }
+  .stagger-children > *:nth-child(4) { animation-delay: 0.25s; }
+  .stagger-children > *:nth-child(5) { animation-delay: 0.3s; }
+  .stagger-children > *:nth-child(6) { animation-delay: 0.35s; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: hsl(var(--background-secondary));
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+}

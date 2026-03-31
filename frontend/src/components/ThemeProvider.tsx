@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Theme, ThemeProviderContext } from "../context/theme-context"
 
 type ThemeProviderProps = {
