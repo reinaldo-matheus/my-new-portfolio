@@ -49,7 +49,7 @@ export default function Contact() {
   useEffect(() => {
     emailjs.init({
       publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      blockHeadless: true, // Block headless browsers (bots)
+      blockHeadless: import.meta.env.PROD, // Block headless browsers only in production
       limitRate: {
         throttle: 10000, // 10 seconds between requests
       },
