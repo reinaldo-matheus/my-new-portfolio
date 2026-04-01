@@ -7,42 +7,47 @@
 
 @layer base {
   :root {
-    /* Light Mode - Clean Minimalist with Subtle Personality */
+    /* ==========================================
+       LIGHT MODE - Purple Aesthetic
+       ========================================== */
     
     /* Base Backgrounds */
-    --background: 40 20% 97%;          /* Warm off-white #FAF9F6 */
-    --background-secondary: 95 35% 90%; /* Soft mint green #E8F5E8 */
-    --background-accent: 100 30% 85%;   /* Muted mint #D4E8D1 */
+    --background: 250 50% 98%;              /* #F4F3FF */
+    --background-secondary: 250 60% 96%;    /* #ECEAFF */
+    --background-accent: 250 50% 93%;
     
     /* Text Colors */
-    --foreground: 0 0% 18%;             /* Dark charcoal #2D2D2D */
-    --foreground-muted: 0 0% 45%;       /* Medium gray */
+    --foreground: 252 40% 15%;              /* #1A1730 */
+    --foreground-muted: 252 30% 40%;        /* #4A4580 */
     
     /* Card System */
-    --card: 0 0% 100%;                  /* Pure white */
-    --card-foreground: 0 0% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 252 40% 15%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 18%;
+    --popover-foreground: 252 40% 15%;
     
-    /* Primary - Soft Green Accent */
-    --primary: 120 25% 45%;             /* Muted green */
+    /* Primary - Solid Purple */
+    --primary: 250 70% 58%;                 /* #5B47E0 */
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary - Subtle Purple (geek touch) */
-    --secondary: 270 25% 65%;           /* Soft lavender #9B8BBD */
+    /* Secondary - Deep Blue */
+    --secondary: 220 85% 53%;               /* #2563EB */
     --secondary-foreground: 0 0% 100%;
     
-    /* Accent - Mint Green */
-    --accent: 120 35% 75%;              /* Mint #B8E0B8 */
-    --accent-foreground: 0 0% 18%;
+    /* Accent - Purple (main accent) */
+    --accent: 250 70% 58%;                  /* #5B47E0 */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Neon Accent (use sparingly) */
+    --neon: 270 90% 65%;                    /* #A855F7 */
     
     /* Muted & Borders */
-    --muted: 40 10% 92%;
-    --muted-foreground: 0 0% 45%;
-    --border: 40 10% 88%;
-    --input: 40 10% 95%;
-    --ring: 120 25% 45%;
+    --muted: 250 30% 92%;
+    --muted-foreground: 252 30% 40%;
+    --border: 250 30% 88%;
+    --input: 250 30% 95%;
+    --ring: 250 70% 58%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -50,58 +55,74 @@
     --radius: 1rem;
     
     /* Shadows - Light Mode */
-    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
-    --shadow-lg: 0 8px 24px rgba(0,0,0,0.08);
-    --shadow-card: 0 2px 8px rgba(0,0,0,0.04);
+    --shadow-sm: 0 1px 2px rgba(91, 71, 224, 0.04);
+    --shadow-md: 0 4px 12px rgba(91, 71, 224, 0.08);
+    --shadow-lg: 0 8px 24px rgba(91, 71, 224, 0.12);
+    --shadow-card: 0 2px 8px rgba(91, 71, 224, 0.06);
+    --shadow-card-hover: 0 0 20px rgba(91, 71, 224, 0.12);
     
-    /* Transition */
-    --transition-base: 0.2s ease;
+    /* Gradient for skill bars */
+    --gradient-skill: linear-gradient(90deg, #2563EB 0%, #A855F7 100%);
+    
+    /* Hero glow */
+    --hero-glow: radial-gradient(ellipse at center, rgba(91, 71, 224, 0.08) 0%, transparent 65%);
   }
 
   .dark {
-    /* Dark Mode - Elegant Dark with Mint Accents */
+    /* ==========================================
+       DARK MODE - Neon Purple Aesthetic
+       ========================================== */
     
     /* Base Backgrounds */
-    --background: 220 20% 10%;          /* Deep blue-gray */
-    --background-secondary: 220 18% 14%; /* Slightly lighter */
-    --background-accent: 220 15% 18%;
+    --background: 250 40% 5%;               /* #0D0D14 */
+    --background-secondary: 250 35% 9%;     /* #12121E */
+    --background-accent: 250 30% 12%;
     
     /* Text Colors */
-    --foreground: 40 20% 95%;           /* Warm white */
-    --foreground-muted: 40 10% 65%;
+    --foreground: 250 50% 95%;              /* #E8E6FF */
+    --foreground-muted: 250 25% 62%;        /* #8A85B8 */
     
     /* Card System */
-    --card: 220 18% 13%;
-    --card-foreground: 40 20% 95%;
+    --card: 250 35% 9%;                     /* #12121E */
+    --card-foreground: 250 50% 95%;
     
-    --popover: 220 18% 13%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 250 35% 9%;
+    --popover-foreground: 250 50% 95%;
     
-    /* Primary - Brighter Green for Dark Mode */
-    --primary: 120 40% 55%;
-    --primary-foreground: 0 0% 10%;
+    /* Primary - Vibrant Purple */
+    --primary: 250 90% 70%;                 /* #7C6EF8 */
+    --primary-foreground: 250 40% 5%;
     
-    /* Secondary - Brighter Purple */
-    --secondary: 270 35% 70%;
-    --secondary-foreground: 0 0% 10%;
+    /* Secondary - Electric Blue */
+    --secondary: 217 90% 64%;               /* #4F8EF7 */
+    --secondary-foreground: 250 40% 5%;
     
-    /* Accent - Brighter Mint */
-    --accent: 120 45% 65%;
-    --accent-foreground: 0 0% 10%;
+    /* Accent - Vibrant Purple */
+    --accent: 250 90% 70%;                  /* #7C6EF8 */
+    --accent-foreground: 250 40% 5%;
+    
+    /* Neon Accent (use sparingly) */
+    --neon: 270 90% 65%;                    /* #A855F7 */
     
     /* Muted & Borders */
-    --muted: 220 15% 20%;
-    --muted-foreground: 40 10% 60%;
-    --border: 220 15% 22%;
-    --input: 220 15% 18%;
-    --ring: 120 40% 55%;
+    --muted: 250 30% 15%;
+    --muted-foreground: 250 25% 62%;
+    --border: 250 30% 18%;
+    --input: 250 30% 12%;
+    --ring: 250 90% 70%;
     
-    /* Shadows - Dark Mode */
-    --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
-    --shadow-lg: 0 8px 24px rgba(0,0,0,0.4);
-    --shadow-card: 0 2px 8px rgba(0,0,0,0.2);
+    /* Shadows - Dark Mode with purple glow */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-card-hover: 0 0 20px rgba(124, 110, 248, 0.12);
+    
+    /* Gradient for skill bars */
+    --gradient-skill: linear-gradient(90deg, #4F8EF7 0%, #A855F7 100%);
+    
+    /* Hero glow */
+    --hero-glow: radial-gradient(ellipse at center, rgba(124, 110, 248, 0.08) 0%, transparent 65%);
   }
 }
 
@@ -131,14 +152,26 @@
 @layer components {
   /* Modern Card Style */
   .card-modern {
-    @apply bg-card rounded-2xl border border-border/60;
+    @apply bg-card rounded-2xl;
+    border: 1px solid rgba(124, 110, 248, 0.2);
     box-shadow: var(--shadow-card);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   }
   
   .card-modern:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    border-color: rgba(124, 110, 248, 0.5);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Light mode card adjustments */
+  :root .card-modern {
+    border: 1px solid rgba(91, 71, 224, 0.15);
+  }
+  
+  :root .card-modern:hover {
+    border-color: rgba(91, 71, 224, 0.4);
+    box-shadow: 0 0 16px rgba(91, 71, 224, 0.15);
   }
 
   /* Section Backgrounds */
@@ -150,10 +183,10 @@
     @apply bg-background-secondary;
   }
 
-  /* Accent Line (like in reference) */
+  /* Accent Line (purple) */
   .accent-line {
     @apply w-12 h-1 rounded-full mb-4;
-    background: hsl(var(--accent));
+    background: hsl(var(--primary));
   }
   
   .accent-line-primary {
@@ -164,42 +197,67 @@
   /* Modern Button */
   .btn-modern {
     @apply px-6 py-3 rounded-full font-medium transition-all duration-200;
-    @apply bg-foreground text-background;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
   }
   
   .btn-modern:hover {
-    @apply opacity-90 scale-[1.02];
+    background: #9B8BFF;
+    transform: scale(1.02);
+  }
+  
+  .dark .btn-modern:hover {
+    background: #9B8BFF;
+  }
+  
+  :root .btn-modern:hover {
+    background: #7C6EF8;
   }
 
-  /* Skill Tag */
+  /* Skill Tag - Purple theme */
   .skill-tag {
     @apply px-3 py-1.5 text-sm font-medium rounded-lg;
-    @apply bg-muted/50 text-muted-foreground;
+    background: rgba(124, 110, 248, 0.1);
+    border: 1px solid rgba(124, 110, 248, 0.3);
+    color: #A89EFF;
     transition: all 0.2s ease;
   }
   
   .skill-tag:hover {
-    @apply bg-accent/30 text-foreground;
+    background: rgba(124, 110, 248, 0.2);
+    border-color: rgba(124, 110, 248, 0.5);
+  }
+  
+  /* Light mode skill tags */
+  :root .skill-tag {
+    background: rgba(91, 71, 224, 0.08);
+    border: 1px solid rgba(91, 71, 224, 0.25);
+    color: #5B47E0;
+  }
+  
+  :root .skill-tag:hover {
+    background: rgba(91, 71, 224, 0.15);
+    border-color: rgba(91, 71, 224, 0.4);
   }
 
   /* Terminal Easter Egg */
   .terminal {
     @apply font-mono text-sm rounded-lg p-4;
-    background: #1a1a2e;
-    color: #a0e7a0;
+    background: #0D0D14;
+    color: #A89EFF;
   }
   
   .terminal-prompt {
-    color: #7dd87d;
+    color: #7C6EF8;
   }
   
   .terminal-cursor {
     @apply inline-block w-2 h-4 ml-1;
-    background: #7dd87d;
+    background: #7C6EF8;
     animation: blink 1s step-end infinite;
   }
 
-  /* Profile Photo Style (Oval like reference) */
+  /* Profile Photo Style */
   .profile-photo-container {
     @apply relative;
   }
@@ -208,13 +266,70 @@
     @apply object-cover;
     border-radius: 40% 40% 40% 40%;
   }
+  
+  /* Hero glow effect behind photo */
+  .hero-glow {
+    position: absolute;
+    inset: -2rem;
+    background: var(--hero-glow);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* Stat numbers - neon purple */
+  .stat-number {
+    color: #A855F7;
+  }
+  
+  :root .stat-number {
+    color: #5B47E0;
+  }
+
+  /* Availability dot - neon pulse */
+  .availability-dot {
+    @apply w-2 h-2 rounded-full;
+    background: #A855F7;
+    animation: pulse-neon 2s ease-in-out infinite;
+  }
+
+  /* Skill level dots */
+  .skill-dot-filled {
+    background: hsl(var(--primary));
+  }
+  
+  .skill-dot-empty {
+    background: hsl(var(--border));
+  }
+
+  /* Progress bar gradient */
+  .progress-bar-gradient {
+    background: var(--gradient-skill);
+  }
 }
 
 @layer utilities {
-  /* Text Gradient */
+  /* Text Gradient - Purple to Blue */
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+
+  /* Neon text */
+  .text-neon {
+    color: #A855F7;
+  }
+  
+  :root .text-neon {
+    color: #5B47E0;
+  }
+
+  /* Nav link hover */
+  .nav-link-hover:hover {
+    color: #A89EFF;
+  }
+  
+  :root .nav-link-hover:hover {
+    color: #5B47E0;
   }
 
   /* Fade In Animation */
@@ -277,7 +392,18 @@
   50% { opacity: 0; }
 }
 
-/* Scrollbar Styling */
+@keyframes pulse-neon {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+  }
+  50% {
+    opacity: 0.7;
+    box-shadow: 0 0 16px rgba(168, 85, 247, 0.8);
+  }
+}
+
+/* Scrollbar Styling - Purple theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -292,7 +418,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: hsl(var(--primary) / 0.5);
 }
 
 .dark ::-webkit-scrollbar-track {
@@ -301,4 +427,8 @@
 
 .dark ::-webkit-scrollbar-thumb {
   background: hsl(var(--border));
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.6);
 }

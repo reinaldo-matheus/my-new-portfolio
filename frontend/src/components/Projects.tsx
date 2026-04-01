@@ -64,14 +64,14 @@ const Projects = () => {
               {/* Header */}
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-1 h-6 rounded-full bg-accent" />
+                  <div className="w-1 h-6 rounded-full bg-primary" />
                   <h3 className="text-lg font-bold text-foreground">
                     {project.title}
                   </h3>
                 </div>
 
                 {project.status && (
-                  <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-secondary/10 text-secondary border border-secondary/20">
+                  <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
                     {project.status}
                   </span>
                 )}
@@ -95,7 +95,7 @@ const Projects = () => {
               </div>
 
               {/* Actions */}
-              <div className="flex gap-3 pt-4 border-t border-border/50">
+              <div className="flex gap-3 pt-4 border-t border-primary/10">
                 <Button
                   size="sm"
                   variant="ghost"

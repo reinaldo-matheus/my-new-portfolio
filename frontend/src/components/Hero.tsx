@@ -38,7 +38,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 onClick={() => scrollToSection('projetos')}
-                className="px-6 py-3 rounded-full font-medium border-border hover:bg-muted/50 transition-all"
+                className="px-6 py-3 rounded-full font-medium border-border hover:bg-muted/50 hover:border-primary/50 transition-all"
               >
                 Ver Projetos
               </Button>
@@ -49,9 +49,9 @@ const Hero = () => {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end animate-fade-in">
             <div className="profile-photo-container">
               <div className="relative">
-                {/* Decorative background */}
+                {/* Decorative glow background - purple */}
                 <div 
-                  className="absolute -inset-4 rounded-[35%] bg-gradient-to-br from-accent/30 to-secondary/20 blur-2xl"
+                  className="hero-glow"
                   aria-hidden="true"
                 />
                 

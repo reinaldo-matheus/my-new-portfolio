@@ -63,8 +63,8 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-muted/50 flex items-center justify-center
-                           text-muted-foreground hover:text-foreground hover:bg-muted
-                           transition-all"
+                           text-muted-foreground hover:text-primary hover:bg-primary/10
+                           transition-all border border-transparent hover:border-primary/30"
                   aria-label={link.label}
                 >
                   <link.icon className="w-4 h-4" />
@@ -83,7 +83,7 @@ const Footer = () => {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                    className="text-muted-foreground nav-link-hover transition-colors text-sm"
                   >
                     {link.label}
                   </button>
@@ -114,14 +114,14 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-[hsl(220,20%,12%)] dark:bg-[hsl(220,20%,8%)] text-white/80">
+      <div className="bg-[#0D0D14]">
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm flex items-center gap-2">
-              Desenvolvido com <Heart className="w-4 h-4 text-red-400" /> por{' '}
-              <span className="font-semibold text-white">Matheus Reinaldo</span>
+            <p className="text-sm flex items-center gap-2 text-[#E8E6FF]/80">
+              Desenvolvido com <Heart className="w-4 h-4 text-[#A855F7]" /> por{' '}
+              <span className="font-semibold text-[#E8E6FF]">Matheus Reinaldo</span>
             </p>
-            <p className="text-sm text-white/60">
+            <p className="text-sm text-[#E8E6FF]/60">
               © {currentYear} Todos os direitos reservados
             </p>
           </div>
