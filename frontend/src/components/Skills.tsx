@@ -65,7 +65,7 @@ const Skills = () => {
                 </div>
                 <div className="h-2 bg-muted rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-primary rounded-full transition-all duration-1000 ease-out"
+                    className="h-full rounded-full transition-all duration-1000 ease-out progress-bar-gradient"
                     style={{ 
                       width: isVisible ? `${skill.level}%` : '0%',
                       transitionDelay: `${index * 100}ms`
@@ -100,11 +100,11 @@ const Skills = () => {
             {/* Fun Stats */}
             <div className="grid grid-cols-2 gap-4 mt-6">
               <div className="card-modern p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">100%</div>
+                <div className="text-3xl font-bold stat-number mb-2">100%</div>
                 <div className="text-sm text-muted-foreground">Clean Code</div>
               </div>
               <div className="card-modern p-6 text-center">
-                <div className="text-3xl font-bold text-secondary mb-2">24/7</div>
+                <div className="text-3xl font-bold stat-number mb-2">24/7</div>
                 <div className="text-sm text-muted-foreground">Learning</div>
               </div>
             </div>

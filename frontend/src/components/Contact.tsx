@@ -460,8 +460,8 @@ export default function Contact() {
                 Sempre aberto para discutir ideias inovadoras e desafios técnicos interessantes.
               </p>
               <div className="mt-4 flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-sm text-green-600 dark:text-green-400 font-medium">
+                <div className="availability-dot" />
+                <span className="text-sm text-primary font-medium">
                   Disponível para novos projetos
                 </span>
               </div>

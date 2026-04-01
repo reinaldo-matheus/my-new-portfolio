@@ -32,7 +32,7 @@ const About = () => {
           {/* Character Card */}
           <div className="card-modern p-8">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-16 h-16 rounded-2xl overflow-hidden ring-2 ring-border">
+              <div className="w-16 h-16 rounded-2xl overflow-hidden ring-2 ring-primary/30">
                 <img 
                   src={profilePhoto} 
                   alt="Matheus" 
@@ -49,7 +49,7 @@ const About = () => {
               {skills.map((skill, index) => (
                 <div 
                   key={index} 
-                  className="flex justify-between items-center p-3 rounded-xl bg-muted/30 border border-border/50"
+                  className="flex justify-between items-center p-3 rounded-xl bg-muted/30 border border-primary/10"
                 >
                   <span className="text-sm font-medium text-foreground">{skill.name}</span>
                   <div className="flex gap-1.5">
@@ -58,8 +58,8 @@ const About = () => {
                         key={i} 
                         className={`w-2 h-2 rounded-full transition-colors ${
                           i < skill.level 
-                            ? 'bg-primary' 
-                            : 'bg-border'
+                            ? 'skill-dot-filled' 
+                            : 'skill-dot-empty'
                         }`} 
                       />
                     ))}
@@ -90,7 +90,7 @@ const About = () => {
                   className="card-modern p-5 text-center"
                 >
                   <stat.icon className="w-6 h-6 mx-auto mb-3 text-primary" />
-                  <div className="text-2xl font-bold text-foreground mb-1">{stat.value}</div>
+                  <div className="text-2xl font-bold stat-number mb-1">{stat.value}</div>
                   <div className="text-xs text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
