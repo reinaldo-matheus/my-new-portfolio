@@ -3,7 +3,7 @@ import { Heart, Github, Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const [terminalText, setTerminalText] = useState('');
-  const fullText = 'console.log("Thanks for visiting! 🎮");';
+  const fullText = 'console.log("Thanks for visiting my web site! 😎");';
   
   useEffect(() => {
     let index = 0;
